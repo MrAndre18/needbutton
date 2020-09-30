@@ -1,8 +1,0 @@
-﻿@@include('modules/jQuery.min.js')
-@@include('modules/convert-svg.js')
-@@include('modules/slick.min.js')
-@@include('modules/jquery.maskedinput.min.js')
-@@include('modules/navigation.js')
-@@include('modules/slider.js')
-@@include('modules/scrolling.js')
-@@include('modules/checkout.js')
