@@ -1,0 +1,58 @@
+﻿@use "mixins"
+	
+.slider
+	position: relative
+	div
+		outline: none
+	.slick-arrow
+		height: 100%
+		width: 7vw
+		position: absolute
+		top: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		z-index: 3
+		.svg
+			width: 8px
+			height: 14px
+			transition: all 0.4s
+			@media screen and ( min-width: 600px )
+				width: 46px
+				height: 46px
+				border-radius: 50%
+				padding: 16px 19px
+	.slick-prev
+		left: 3vh
+	.slick-next
+		right: 3vh
+
+	.slick-list
+		.slick-track
+			display: flex
+			align-items: flex-start
+			.slider-item
+				@media screen and ( max-width: 599px )
+					transition: all 0.3s ease
+					transform: scale(0.75)
+				.slider-item-container
+					border-radius: 40px
+					.slider-img
+						width: 100%
+						height: 43%
+						border-radius: 40px 40px 0 0
+					.slide-description
+						height: 57%
+						display: flex
+						flex-direction: column
+						justify-content: space-between
+						padding: 4% 6%
+						.slide-text
+							margin-top: 2%
+							margin-bottom: 4%
+			.slick-current
+				position: relative
+				z-index: 5
+				.slider-item
+					@media screen and ( max-width: 599px )
+						transform: scale(1)

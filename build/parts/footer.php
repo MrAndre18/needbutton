@@ -1,0 +1,1 @@
+<footer class="footer"><ul class="footer-links"><li><a href="tel:+79956691569" target="_blank">+7&nbsp;(995)&nbsp;669-15-69</a></li><li><a href="mailto:nb@needbutton.ru" target="_blank">nb@needbutton.ru</a></li></ul><p class="developed-by">Developed by <strong>NeedButton</strong></p></footer>

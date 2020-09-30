@@ -1,0 +1,36 @@
+﻿@use "mixins"
+	
+$footer-text-color: #f4f9fc
+	
+.menu
+	@media ( max-width: 768px )
+		transition: all 0.6s
+		&.menu-disactive
+			transform: translate(100%, 0)
+			@include mixins.fixed-btns-right-position(90, 62)
+			&:hover
+				@include mixins.fixed-btns-right-position(100, 72)
+		&.menu-active
+			right: 0
+			.menu-btn
+				.svg
+					transform: rotateY(-180deg)
+
+.btn-next-screen:hover,
+.checkout-btn:hover,
+.btn-send:hover,
+.social-networks-item a:hover,
+.slider .slick-arrow:hover .svg
+	transform: scale(1.15)
+
+.to-checkout
+	transition: all 0.6s
+	transform: translate(100%, 0)
+	@include mixins.fixed-btns-right-position(90, 62)
+	&:hover
+		transform: translate(0, 0)
+		right: 0
+
+.footer
+	.footer-links a:hover
+		color: $footer-text-color

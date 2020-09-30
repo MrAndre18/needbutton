@@ -1,0 +1,20 @@
+﻿@use "mixins"
+	
+.footer
+	@include mixins.adaptive-mob-pc(100%, 100%, 254, 156)
+	border-radius: 40px 40px 0px 0px
+	//margin-top: 14vh
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	position: relative
+	z-index: 2
+	.footer-links
+		li
+			margin-bottom: 6%
+	.developed-by
+		margin-top: 8%
+		@media ( min-width: 450px )
+			margin-top: 3%
+			
