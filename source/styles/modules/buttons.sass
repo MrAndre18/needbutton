@@ -1,0 +1,47 @@
+﻿@use "mixins"
+	
+%btn-content-position
+	display: flex
+	justify-content: center
+	align-items: center
+	
+.menu-btn
+	@include mixins.adaptive-mob-tablet(90, 62, 60, 50)
+	position: relative
+	@extend %btn-content-position
+	@media screen and ( min-width: 769px )
+		display: none
+	.svg
+		transition: all 0.6s
+		@include mixins.adaptive-mob-tablet(29, 15, 38, 20)
+
+.checkout-btn
+	display: none
+	width: 218px
+	height: 40px
+	border-radius: 19.5px
+	transition: all 0.6s
+	@media ( min-width: 1024px )
+		display: inline-block
+
+.btn-next-screen
+	@include mixins.adaptive-mob-pc(61, 56, 61, 56)
+	position: absolute
+	bottom: 2vh
+	left: calc( 50% - 30px )
+	@extend %btn-content-position
+	border-radius: 50%
+	transition: all 0.6s
+	.svg
+		margin-top: 6px
+		width: 42%
+		height: 36%
+
+.btn-send
+	@include mixins.adaptive-mob-pc(174, 112, 40, 40)
+	@extend %btn-content-position
+	border-radius: 38px
+	position: absolute
+	bottom: -20px
+	right: 20px
+	transition: all 0.4s

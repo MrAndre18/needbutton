@@ -1,0 +1,119 @@
+﻿@use "fonts"
+@use "typography"
+
+//body
+$body-bg-sm: url('img/png/main-bg-sm.png') no-repeat
+$body-bg-md: url('img/png/main-bg-md.png') no-repeat
+$body-bg-lg: url('img/png/main-bg-lg.png') no-repeat
+$body-bg-color: #F4F9FC
+	
+//buttons
+$btn-bg-color: #F4F9FC
+$btn-shadow: -2px -4px 4px rgba(255, 255, 255, 0.7), 2px 4px 4px rgba(98, 87, 114, 0.5)
+$btn-send-shadow: -4px -2px 4px #FFFFFF, 2px 4px 4px rgba(98, 87, 114, 0.5)
+	
+%btn-design
+	background: $btn-bg-color
+	box-shadow: $btn-shadow
+
+// about us
+$about-us-img-shadow: 2px 4px 10px rgba(98, 87, 114, 0.5)
+
+// slider
+$slide-bg: #fff
+$slide-shadow: 0px 4px 4px rgba(98, 87, 114, 0.5)
+$slide-arrow-bg: #F4F9FC
+$slide-arrow-shadow: 2px 4px 4px rgba(98, 87, 114, 0.5), -2px -4px 4px rgba(255, 255, 255, 0.7)
+
+
+// checkout(contacts)
+$facebook-color: #625772
+$instagram-color: #F38181
+$vk-color: #7A7187
+$phone-color: #576F72
+$checkout-shadow: 0px 4px 4px rgba(98, 87, 114, 0.5)
+$form-bg: #fff
+$form-border-color: #C4C4C4
+$checkout-success-bg: rgba(98, 87, 114, 0.5)
+$success-block-bg: #f4f9fc
+$success-block-shadow: 4px 4px 7px rgba(98, 87, 114, 0.5)
+
+@mixin social-networks-decor($color)
+	background-color: $color
+	box-shadow: -4px -2px 4px #FFFFFF, 2px 4px 4px rgba(98, 87, 114, 0.5)
+	border-radius: 12px
+
+//footer
+$footer-bg: #625772
+
+body
+	background: $body-bg-sm, $body-bg-color
+	background-size: cover
+	@media ( min-width: 767px )
+		background: $body-bg-md, $body-bg-color
+		background-size: cover
+	@media ( min-width: 1023px )
+		background: $body-bg-lg, $body-bg-color
+		background-size: cover
+
+.menu
+	@extend %btn-design
+	@media screen and ( min-width: 769px )
+		background: none
+		box-shadow: none
+.to-checkout
+	@extend %btn-design
+.btn-next-screen
+	@extend %btn-design
+.btn-send
+	@extend %btn-design
+	box-shadow: $btn-send-shadow
+
+.checkout-btn
+	@extend %btn-design
+
+.about-us
+	.about-us-img
+		img
+			box-shadow: $about-us-img-shadow
+
+.slider
+	@for $i from 1 through 7
+		.slide-#{$i}
+			.slider-img
+				background: url('img/jpg/slide-#{$i}.jpg') no-repeat center top
+				background-size: 100% 100%
+	.slider-item-container
+		background: $slide-bg
+		box-shadow: $slide-shadow
+		cursor: grab
+	.slick-arrow .svg
+		@media screen and ( min-width: 600px )
+			background: $slide-arrow-bg
+			box-shadow: $slide-arrow-shadow
+
+.contacts
+	.social-networks-links
+		.facebook
+			+social-networks-decor($facebook-color)
+		.instagram
+			+social-networks-decor($instagram-color)
+		.vk
+			+social-networks-decor($vk-color)
+		.phone
+			+social-networks-decor($phone-color)
+	.checkout
+		background: $form-bg
+		box-shadow: $checkout-shadow
+		.form
+			input, textarea
+				border-color: $form-border-color
+
+.checkout-success
+	background: $checkout-success-bg
+	.success-block
+		background: $success-block-bg
+		box-shadow: $success-block-shadow
+
+.footer
+	background: $footer-bg

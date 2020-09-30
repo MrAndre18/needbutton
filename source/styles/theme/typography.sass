@@ -1,0 +1,155 @@
+﻿$text-color: #625772
+$title-color: linear-gradient(to right, #ABA8B7 0%,#625772 28.29%)
+$btn-checkout-color: linear-gradient(to bottom, #ABA8B7 30%,#625772 60%)
+$subtitle-color: #F38181
+$price-color: #F38181
+$price-list-color: #F38181
+$footer-text-color: #fff
+$main-font: "Montserrat", sans-serif
+
+@mixin adaptive-font($maxSize, $minSize)
+	$addSize: $maxSize - $minSize
+	$addMobileSize: $addSize + $addSize * 0.7
+	@media ( max-width: 767px )
+		font-size: calc(#{$minSize + px} + #{$addMobileSize} * ((100vw - 320px) / 1200))
+	@media ( min-width: 767px )
+		font-size: calc(#{$minSize + px} + #{$addSize} * (100vw / 1200))
+	
+%text-params
+	font-weight: 300
+	@include adaptive-font(18, 20)
+	line-height: 24px
+	letter-spacing: 0.05em
+	
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+span,
+ul,
+li,
+label,
+textarea,
+input,
+button 
+	font-family: $main-font
+	font-weight: normal
+	color: $text-color
+
+.subtitle,
+h2,
+h3
+	@extend %text-params
+	color: $subtitle-color
+
+.subtitle
+	margin-left: 6vw
+	@media ( min-width: 1024px )
+		margin-left: 0
+		text-align: center
+
+h1
+	&.subtitle
+		@include adaptive-font(28, 18)
+		text-align: center
+		margin-left: 0
+		@media ( min-width: 1024px )
+			text-align: left
+
+.block-title
+	@extend %text-params
+	font-weight: bold
+	@include adaptive-font(36, 30)
+	line-height: 40px
+	margin-left: 6vw
+	display: inline-block
+	background: $title-color
+	background-clip: text
+	-webkit-text-fill-color: transparent
+	@media ( min-width: 1024px )
+		margin-left: 0
+
+p
+	@extend %text-params
+	@include adaptive-font(18, 13)
+	text-align: left
+
+.checkout-btn
+	.btn-checkout-text
+		display: inline-block
+		margin: 0 auto
+		font-weight: bold
+		@include adaptive-font(18, 14)
+		line-height: 20px
+		text-align: center
+		letter-spacing: 0.05em
+		background: $btn-checkout-color
+		background-clip: text
+		-webkit-text-fill-color: transparent
+
+.menu-items
+	a
+		@include adaptive-font(18, 13)
+		line-height: 20px
+		letter-spacing: 0.05em
+		&.active
+			font-weight: bold
+
+.about-us-description
+	letter-spacing: 0.08em
+
+.slider-item
+	.slide-description
+		text-align: left
+		@media screen and ( min-width: 600px ) and ( max-width: 1024px )
+			.slide-title,
+			.slide-text,
+			.slide-price
+				font-size: 70%
+		.slide-title
+			@extend %text-params
+			color: $price-list-color
+			font-weight: bold
+		.slide-text
+			height: 50%
+			overflow: hidden
+			line-height: 1.4em
+		.slide-price
+			@extend %text-params
+			display: block
+			text-align: right
+			color: $price-color
+
+.checkout
+	.checkout-title
+		text-align: left
+		color: $text-color
+		span
+			font-weight: bold
+	.btn-send
+		@extend %text-params
+		font-weight: bold
+		@include adaptive-font(18, 14)
+
+.checkout-success
+	.success-block
+		.success-title
+			@include adaptive-font(22, 18)
+			font-weight: bold
+			line-height: 22px
+			letter-spacing: 0.05em
+		.success-text
+			width: 90%
+			@include adaptive-font(14, 10)
+			line-height: 14px
+			letter-spacing: 0.05em
+.footer
+	.footer-links li a,
+	.developed-by,
+	.developed-by strong
+		@include adaptive-font(18, 11)
+		text-align: center
+		letter-spacing: 0.135em
+		color: $footer-text-color

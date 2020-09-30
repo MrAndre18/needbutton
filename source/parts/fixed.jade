@@ -1,0 +1,29 @@
+.short-logo
+	img.svg(src="img/svg/short-logo.svg", alt="logo")
+
+nav.menu.menu-disactive
+	button.menu-btn
+		img.svg(src="img/svg/menu.svg", alt="menu")
+	.nav-logo
+		img.svg(src="img/svg/logo.svg", alt="logo")
+	ul.menu-items
+		li
+			a.active(href="#about-us", data-target="anchor") О нас
+		li
+			a(href="#services", data-target="anchor") Наши услуги
+		li
+			a(href="#contacts", data-target="anchor") Контакты
+	button.checkout-btn
+			p.btn-checkout-text Заказать сайт
+
+button.to-checkout
+	.btn-checkout-img
+		img.svg(src="img/svg/btn-checkout.svg", alt="checkout")
+	p.btn-checkout-text Заказать сайт
+
+.checkout-success
+	.checkout-wrapper
+		.success-block
+			img.svg(src="img/svg/success.svg", alt="success")
+			h4.success-title Заявка оформлена
+			p.success-text Наши специалисты свяжутся с Вами в ближайшее время
